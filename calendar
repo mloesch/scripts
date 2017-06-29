@@ -1,0 +1,2 @@
+#!/bin/bash
+sensible-browser "https://calendar.google.com"
