@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# Remove all Docker images
+#
+docker rmi -f $(docker images | awk '{print $3}')
