@@ -29,7 +29,7 @@ def main():
                 usage_found = True
                 break
         if not usage_found:
-            print("Candidate: %s" % class_name)
+            print("Candidate: %s" % class_name, flush=True)
 
 if __name__ == '__main__':
     main()
