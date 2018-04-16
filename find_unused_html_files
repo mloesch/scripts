@@ -1,0 +1,33 @@
+#!/usr/bin/python3
+#
+# Script to identify unused HTML files in a project
+#
+
+import sys, glob
+
+
+def main():
+    try:
+        project_directory = sys.argv[1]
+    except IndexError:
+        print("Usage: %s [PROJECT DIRECTORY]" % sys.argv[0])
+        sys.exit(1)
+
+    java_file_paths = glob.glob(
+        '%s/**/src/main/java/**/*.java' % project_directory,
+        recursive=True)
+    html_file_paths = glob.glob(
+        '%s/**/src/main/resources/**/*.html' % project_directory,
+        recursive=True)
+
+    class_names = [f.split('/')[-1][:-5] for f in java_file_paths]
+    html_names = (f.split('/')[-1][:-5] for f in html_file_paths)
+
+    for html_name in html_names:
+        if '_' in html_name:
+            continue
+        if html_name not in class_names:
+            print("Candidate: %s" % html_name, flush=True)
+
+if __name__ == '__main__':
+    main()
