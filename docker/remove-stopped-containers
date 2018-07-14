@@ -1,5 +1,5 @@
 #!/bin/bash
 # 
-# Remove all stopped Docker containers
+# Remove stopped Docker containers
 #
-docker rm $(docker ps -a -q)
+docker rm $(docker ps -a | grep Exit | awk '{print $1}')
