@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Script to identify unused HTML files in a project
+# Script to identify unused Wicket HTML files in a project
 #
 
 import sys, glob
