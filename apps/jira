@@ -1,2 +1,2 @@
-#!/bin/bash
+#!/usr/bin/env bash
 sensible-browser "https://jira.gulp.tools/secure/RapidBoard.jspa?rapidView=36"
