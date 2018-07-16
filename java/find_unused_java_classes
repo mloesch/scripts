@@ -24,10 +24,10 @@ def main():
             if class_name == path.split('/')[-1][:-5]:
                 # Don't count self as usage
                 continue
-            content = open(path).read()
-            if class_name in content:
-                usage_found = True
-                break
+            with open(path) as fp:
+                if class_name in fp.read():
+                    usage_found = True
+                    break
         if not usage_found:
             print("Candidate: %s" % class_name, flush=True)
 
