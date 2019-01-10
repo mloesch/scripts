@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-sensible-browser "https://jira.gulp.tools/secure/RapidBoard.jspa?rapidView=36"
+sensible-browser "https://jira/secure/RapidBoard.jspa?projectKey=CAD&rapidView=87"
